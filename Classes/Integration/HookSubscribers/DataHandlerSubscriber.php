@@ -409,7 +409,7 @@ class DataHandlerSubscriber
     {
         // A Provider must be resolved which implements the GridProviderInterface
         $resolver = GeneralUtility::makeInstance(ObjectManager::class)->get(ProviderResolver::class);
-        if ($command === 'undelete') {
+        if ($command === 'undelete' || $command === 'delete') {
             $originalRecord = $this->getSingleRecordWithoutRestrictions($table, $parentUid, '*');
         } else {
             $originalRecord = $this->getSingleRecordWithRestrictions($table, $parentUid, '*');
